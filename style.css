@@ -20,6 +20,20 @@ header {
     padding: 15px;
 }
 
+h2 {
+    font-family: Display;
+    font-size: 30px;
+    background-color: #faa975;
+    padding: 15px;
+}
+
+p {
+    font-family: Roboto;
+    font-size: 20px;
+    color: white;
+    background-color: darkgray;
+}
+
 nav ul {
     display: flex;
     justify-content: center;
