@@ -14,7 +14,7 @@ body {
 
 header {
     font-family: Roboto, sans-serif;
-    font-size: 30px;
+    font-size: 1.5rem;
     text-align: center;
     background-color: #222222;
     color: #fabb23; 
@@ -38,7 +38,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-warp: wrap;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -81,12 +81,6 @@ footer {
   height: auto;
   aspect-ratio: 16 / 9;
   border-radius: 10px;
-}
-
-iframe {
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
 }
 
 .player {
