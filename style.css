@@ -1,5 +1,5 @@
 h1 {
-    font-family: Display;
+    font-family: 'Display', sans-serif;
     font-size: 40px;
     text-align: center;
 }
@@ -21,17 +21,16 @@ header {
 }
 
 h2 {
-    font-family: Display;
+    font-family: 'Display', sans-serif;
     font-size: 30px;
     background-color: #faa975;
+    color: black;
     padding: 15px;
 }
 
 p {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 20px;
-    color: white;
-    background-color: darkgray;
 }
 
 nav ul {
@@ -52,7 +51,8 @@ section {
     margin: 20px auto;
     max-width: 800px;
     border-radius: 10px;
-    background: white;
+    background: #333; 
+    color: white;  
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
