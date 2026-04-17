@@ -62,9 +62,9 @@ allowfullscreen>
 </iframe>
 
     <button onclick="changeMood()">Change Mood</button>
-     <audio id="audio1" src="audio/happy.mp3"></audio>
-    <audio id="audio2" src="audio/sad.mp3"></audio>
-    <audio id="audio3" src="audio/intense.mp3"></audio>
+     <audio id="rocky" src="audio/rocky.mp3"></audio>
+    <audio id="bitter" src="audio/bitter.mp3"></audio>
+    <audio id="happy" src="audio/happy.mp3"></audio>
 </section>
 
 <section id="takeaways">
@@ -87,9 +87,9 @@ allowfullscreen>
 let current = 0;
 
 const audios = [
-  document.getElementById("audio1"),
-  document.getElementById("audio2"),
-  document.getElementById("audio3")
+  document.getElementById("rocky"),
+  document.getElementById("bitter"),
+  document.getElementById("happy")
 ];
 
 function changeMood() {
