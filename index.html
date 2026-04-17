@@ -62,6 +62,7 @@ allowfullscreen>
 </iframe>
 
     <button onclick="changeMood()">Change Mood</button>
+    <button onclick="pauseMusic()">Pause Music</button>
      <audio id="rocky" src="audio/rocky.mp3"></audio>
     <audio id="bitter" src="audio/bitter.mp3"></audio>
     <audio id="happy" src="audio/happy.mp3"></audio>
@@ -100,6 +101,11 @@ function changeMood() {
 
   audios[current].play();
   current = (current + 1) % audios.length;
+}
+    function pauseMusic() {
+  moods.forEach(audio => {
+    audio.pause();
+  });
 }
 </script>
     
