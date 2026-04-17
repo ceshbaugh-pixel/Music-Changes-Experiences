@@ -61,9 +61,16 @@ frameborder="0"
 allowfullscreen>
 </iframe>
 
-    <button onclick="changeMood()">Change Mood</button>
-    <button onclick="pauseMusic()">Pause Music</button>
-     <audio id="rocky" src="audio/rocky.mp3"></audio>
+<div class="player">
+    <button id="playPauseBtn" onclick="togglePlay()">▶️</button>
+    <button onclick="changeMood()">🎵 Change Mood</button>
+
+    <label>🔊</label>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+  </div>
+
+<!-- Audio files --->
+    <audio id="rocky" src="audio/rocky.mp3"></audio>
     <audio id="bitter" src="audio/bitter.mp3"></audio>
     <audio id="happy" src="audio/happy.mp3"></audio>
 </section>
@@ -84,29 +91,53 @@ allowfullscreen>
     <p>&copy; 2026 Music Experience Project</p>
 </footer>
     
+    <!--Javascript--->
+    
 <script>
 let current = 0;
+let isPlaying = false;
 
-const audios = [
-  document.getElementById("rocky"),
+const moods = [
+  document.getElementById("happy"),
   document.getElementById("bitter"),
-  document.getElementById("happy")
+  document.getElementById("rocky")
 ];
 
+const playBtn = document.getElementById("playPauseBtn");
+const volumeSlider = document.getElementById("volumeSlider");
+
+// ▶️ / ⏸ Toggle
+function togglePlay() {
+  if (isPlaying) {
+    moods.forEach(audio => audio.pause());
+    playBtn.textContent = "▶️";
+  } else {
+    moods[current].play();
+    playBtn.textContent = "⏸";
+  }
+  isPlaying = !isPlaying;
+}
+
+// 🎵 Change mood
 function changeMood() {
-  audios.forEach(audio => {
+  moods.forEach(audio => {
     audio.pause();
     audio.currentTime = 0;
   });
 
-  audios[current].play();
-  current = (current + 1) % audios.length;
+  moods[current].play();
+  isPlaying = true;
+  playBtn.textContent = "⏸";
+
+  current = (current + 1) % moods.length;
 }
-    function pauseMusic() {
+
+// 🔊 Volume control
+volumeSlider.addEventListener("input", () => {
   moods.forEach(audio => {
-    audio.pause();
+    audio.volume = volumeSlider.value;
   });
-}
+});
 </script>
     
 </body>
