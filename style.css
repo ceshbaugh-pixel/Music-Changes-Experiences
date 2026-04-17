@@ -1,12 +1,13 @@
 h1 {
     font-family: 'Display', sans-serif;
-    font-size: 40px;
+    font-size: 2rem;
     text-align: center;
 }
 
 
 body {
     font-family: Arial, sans-serif;
+    font-size: 16px;
     margin: 0;
     background-color: #f4f4f4;
 }
@@ -22,7 +23,7 @@ header {
 
 h2 {
     font-family: 'Display', sans-serif;
-    font-size: 30px;
+    font-size: 1.5rem;
     background-color: #faa975;
     color: black;
     padding: 15px;
@@ -30,15 +31,14 @@ h2 {
 
 p {
     font-family: Roboto, sans-serif;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
-    list-style: none;
-    padding: 0;
+    flex-warp: wrap;
 }
 
 nav a {
@@ -67,6 +67,20 @@ footer {
     padding: 15px;
     background-color: #222222;
     color: white;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
 }
 
 iframe {
