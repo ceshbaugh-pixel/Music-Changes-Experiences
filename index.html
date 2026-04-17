@@ -95,6 +95,8 @@ allowfullscreen>
     <!--Javascript--->
     
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+
 let current = 0;
 let isPlaying = false;
 
@@ -138,6 +140,12 @@ volumeSlider.addEventListener("input", () => {
   moods.forEach(audio => {
     audio.volume = volumeSlider.value;
   });
+});
+
+// make functions global so buttons can use them
+window.togglePlay = togglePlay;
+window.changeMood = changeMood;
+
 });
 </script>
     
