@@ -39,3 +39,35 @@ footer {
     background-color: #222222;
     color: white;
 }
+
+.player {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: #222;
+  padding: 10px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.player button {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.player button:hover {
+  background: #666;
+}
+
+.player input[type="range"] {
+  width: 120px;
+}
