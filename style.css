@@ -1,11 +1,13 @@
 h1 {
-    font-family: Display;
-    font-size: 24px;
+    font-family: 'Display', sans-serif;
+    font-size: 40px;
+    text-align: center;
 }
 
 header {
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 30px;
+    text-align: center;
     color: #fabb23
 }
 
