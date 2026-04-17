@@ -54,8 +54,17 @@
 <section id="interactive">
     <h2>Try It! (Interactive)</h2>
     <p>Click the button to change the mood of the page:</p>
+    <iframe width="640" height="360" 
+src="https://www.youtube.com/embed/nd1L0eK_dKE?enablejsapi=1" 
+title="rockyVideo" 
+frameborder="0" 
+allowfullscreen>
+</iframe>
 
     <button onclick="changeMood()">Change Mood</button>
+     <audio id="audio1" src="audio/happy.mp3"></audio>
+    <audio id="audio2" src="audio/sad.mp3"></audio>
+    <audio id="audio3" src="audio/intense.mp3"></audio>
 </section>
 
 <section id="takeaways">
@@ -73,6 +82,26 @@
     <p>About | Sources</p>
     <p>&copy; 2026 Music Experience Project</p>
 </footer>
+    
+<script>
+let current = 0;
 
+const audios = [
+  document.getElementById("audio1"),
+  document.getElementById("audio2"),
+  document.getElementById("audio3")
+];
+
+function changeMood() {
+  audios.forEach(audio => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+
+  audios[current].play();
+  current = (current + 1) % audios.length;
+}
+</script>
+    
 </body>
 </html>
