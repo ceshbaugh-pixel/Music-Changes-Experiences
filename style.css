@@ -41,6 +41,10 @@ nav ul {
     flex-wrap: wrap;
 }
 
+a {
+  color: #fabb23;
+}
+
 nav a {
     color: white;
     text-decoration: none;
