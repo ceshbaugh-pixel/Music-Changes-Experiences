@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | How Background Music Changes Experiences</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>The Science Behind It</h1>
+    <nav>
+    <a href="index.html">← Back to Home</a>
+    </nav>
+</header>
+
+<main>
+
+<section id="science">
+    <section>
+    <p>
+        Music affects the brain by triggering emotional responses and activating memory.
+        Tempo, pitch, and rhythm all influence mood, making scenes feel intense,
+        calm, or dramatic. Another way to think about this is how we are able to colorize 
+        certain emotions or subjects. Where sad is blue and anger is red, or science is associated with green.
+    </p>
+</section>
+</main>
+</body>
+</html>
