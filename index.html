@@ -35,75 +35,6 @@
     </p>
 </section>
 
-<section id="science">
-    <h2>The Science Behind It</h2>
-    <p>
-        Music affects the brain by triggering emotional responses and activating memory.
-        Tempo, pitch, and rhythm all influence mood, making scenes feel intense,
-        calm, or dramatic. Another way to think about this is how we are able to colorize 
-        certain emotions or subjects. Where sad is blue and anger is red, or science is associated with green.
-    </p>
-</section>
-
-<section id="examples">
-    <h2>Examples</h2>
-    <p>
-        In movies specifically, music is used build tension during battles and create emotional
-        moments during story scenes. Without music, these experiences feel less impactful. 
-        Similarly, if a movie uses a specific genre or key of music that doesn't quite fit the scene,
-        then it becomes noticably funnier to the viewer.
-    </p>
-    <p> 
-        This link right here connects to a youtube video that demonstrates the silliness of a scene
-        under more whimsical music compared to the intense orginial music:
-    </p>
-    <div class="video-container">
-  <iframe 
-    src="https://www.youtube.com/embed/XGegwHFsB5o"
-    title="YouTube video"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
-</section>
-
-<section id="interactive">
-    <h2>Try It! (Interactive)</h2>
-    <p> Now I want you to try changing the music for a movie scene. We'll be watching Rocky's training montage from Rocky 2 </p>
-    <p>Click the "Change Mood" button to change the music!</p>
-   <div class="video-container">
-  <iframe 
-    src="https://www.youtube.com/embed/nd1L0eK_dKE"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
-
-<div class="player">
-    <button onclick="changeMood()">🎵 Change Mood</button>
-    <button id="playPauseBtn" onclick="togglePlay()">▶️</button>
-
-
-    <label>🔊</label>
-    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
-  </div>
-
-<!-- Audio files --->
-    <audio id="rocky" src="audio/rocky.mp3"></audio>
-    <audio id="bitter" src="audio/bitter.mp3"></audio>
-    <audio id="happy" src="audio/happy.mp3"></audio>
-</section>
-
-<section id="takeaways">
-    <h2>Key Takeaways</h2>
-    <p> In the end music will always play a big part in shaping everyone's experiences through media, as we can determine that-</p>
-    <ul>
-        <li>Music strongly affects emotions</li>
-        <li>It enhances immersion in media</li>
-        <li>Different styles create different moods</li>
-    </ul>
-</section>
-
 </main>
 
 <footer>
@@ -111,63 +42,6 @@
 <a href="sources.html">Sources</a>
     <p>&copy; 2026 Music Experience Project</p>
 </footer>
-    
-    <!--Javascript--->
-    
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-let current = 0;
-let isPlaying = false;
-
-const moods = [
-  document.getElementById("bitter"),
-  document.getElementById("happy"),
-  document.getElementById("rocky")
-];
-
-const playBtn = document.getElementById("playPauseBtn");
-const volumeSlider = document.getElementById("volumeSlider");
-
-// ▶️ / ⏸ Toggle
-function togglePlay() {
-  if (isPlaying) {
-    moods.forEach(audio => audio.pause());
-    playBtn.textContent = "▶️";
-  } else {
-    moods[current].play();
-    playBtn.textContent = "⏸";
-  }
-  isPlaying = !isPlaying;
-}
-
-// 🎵 Change mood
-function changeMood() {
-  moods.forEach(audio => {
-    audio.pause();
-    audio.currentTime = 0;
-  });
-
-  moods[current].play();
-  isPlaying = true;
-  playBtn.textContent = "⏸";
-
-  current = (current + 1) % moods.length;
-}
-
-// 🔊 Volume control
-volumeSlider.addEventListener("input", () => {
-  moods.forEach(audio => {
-    audio.volume = volumeSlider.value;
-  });
-});
-
-// make functions global so buttons can use them
-window.togglePlay = togglePlay;
-window.changeMood = changeMood;
-
-});
-</script>
     
 </body>
 </html>
