@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try It | How Background Music Changes Experiences</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Try It!</h1>
+    <nav>
+    <a href="index.html">← Back to Home</a>
+    </nav>
+</header>
+
+<main>
+
+<section id="interactive">
+    <section>
+    <p> Now I want you to try changing the music for a movie scene. We'll be watching Rocky's training montage from Rocky 2 </p>
+    <p>Click the "Change Mood" button to change the music!</p>
+   <div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/nd1L0eK_dKE"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="player">
+    <button onclick="changeMood()">🎵 Change Mood</button>
+    <button id="playPauseBtn" onclick="togglePlay()">▶️</button>
+
+
+    <label>🔊</label>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+  </div>
+
+<!-- Audio files --->
+    <audio id="rocky" src="audio/rocky.mp3"></audio>
+    <audio id="bitter" src="audio/bitter.mp3"></audio>
+    <audio id="happy" src="audio/happy.mp3"></audio>
+</section>
+      <!--Javascript--->
+    
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+let current = 0;
+let isPlaying = false;
+
+const moods = [
+  document.getElementById("bitter"),
+  document.getElementById("happy"),
+  document.getElementById("rocky")
+];
+
+const playBtn = document.getElementById("playPauseBtn");
+const volumeSlider = document.getElementById("volumeSlider");
+
+// ▶️ / ⏸ Toggle
+function togglePlay() {
+  if (isPlaying) {
+    moods.forEach(audio => audio.pause());
+    playBtn.textContent = "▶️";
+  } else {
+    moods[current].play();
+    playBtn.textContent = "⏸";
+  }
+  isPlaying = !isPlaying;
+}
+
+// 🎵 Change mood
+function changeMood() {
+  moods.forEach(audio => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+
+  moods[current].play();
+  isPlaying = true;
+  playBtn.textContent = "⏸";
+
+  current = (current + 1) % moods.length;
+}
+
+// 🔊 Volume control
+volumeSlider.addEventListener("input", () => {
+  moods.forEach(audio => {
+    audio.volume = volumeSlider.value;
+  });
+});
+
+// make functions global so buttons can use them
+window.togglePlay = togglePlay;
+window.changeMood = changeMood;
+
+});
+</script>
+</main>
+</body>
+</html>
