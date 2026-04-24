@@ -48,6 +48,15 @@ a {
 nav a {
     color: white;
     text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: yellow;
+    text-decoration: none;
+    background-color: black; 
+    border-radius: 5px;
 }
 
 section {
