@@ -33,15 +33,63 @@
         and react to situations. This website has been built so we can look into this idea
         and experiment with it.
     </p>
+    <img src="images/game.jpg" alt="Video game music example">
+    <img src="images/movie.jpg" alt="Movie music scene">
+    <img src="images/headphones.jpg" alt="Listening to music">
 </section>
 
+    <!-- ✅ Table -->
+<section>
+    <h2>Music Effects</h2>
+    <table border="1">
+        <tr>
+            <th>Music Type</th>
+            <th>Emotion</th>
+        </tr>
+        <tr>
+            <td>Fast</td>
+            <td>Excitement</td>
+        </tr>
+        <tr>
+            <td>Slow</td>
+            <td>Sadness</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Form -->
+<section>
+    <h2>Your Experience</h2>
+    <form id="form">
+        <label>Name:</label>
+        <input type="text" id="name" required>
+
+        <label>Favorite Music:</label>
+        <input type="text" id="music" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="output"></p>
+</section>
+    
 </main>
 
 <footer>
-    <a href="about.html">About</a> <p>|</p>
-<a href="sources.html">Sources</a>
-    <p>&copy; 2026 Music Experience Project</p>
+    <a href="about.html">About</a> |
+    <a href="sources.html">Sources</a>
 </footer>
+
+    <script>
+document.getElementById("form").addEventListener("submit", function(e){
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let music = document.getElementById("music").value;
+
+    document.getElementById("output").textContent =
+        "Thanks " + name + "! You like " + music + ".";
+});
+</script>
     
 </body>
 </html>
