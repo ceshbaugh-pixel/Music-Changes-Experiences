@@ -1,5 +1,7 @@
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
 h1 {
-    font-family: 'Display', sans-serif;
     font-size: 2rem;
     text-align: center;
 }
@@ -22,7 +24,6 @@ header {
 }
 
 h2 {
-    font-family: 'Display', sans-serif;
     font-size: 1.5rem;
     background-color: #faa975;
     color: black;
